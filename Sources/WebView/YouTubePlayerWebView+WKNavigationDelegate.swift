@@ -30,7 +30,7 @@ extension YouTubePlayerWebView: WKNavigationDelegate {
             return decisionHandler(.cancel)
         }
         // Check if Request URL host is equal to origin URL host
-        if url.host?.lowercased() == self.originURL?.host?.lowercased() {
+        if url.host?.lowercased() == self.player?.configuration.originURL?.host?.lowercased() {
             // Allow navigation action
             return decisionHandler(.allow)
         }
