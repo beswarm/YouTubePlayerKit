@@ -37,6 +37,9 @@ final class YouTubePlayerWebView: WKWebView {
             configuration: {
                 // Initialize WebView Configuration
                 let configuration = WKWebViewConfiguration()
+                configuration.websiteDataStore = WKWebsiteDataStore.default()
+                // For private browsing
+                // configuration.websiteDataStore = WKWebsiteDataStore.nonPersistent()
                 
                 #if !os(macOS)
                 // Allows inline media playback
